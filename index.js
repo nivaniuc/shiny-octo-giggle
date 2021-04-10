@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-const template = (input)
+const template = (input) =>
 
 `# ${input.title}
 
@@ -85,7 +85,7 @@ inquirer
                     name: 'email',
                 },
             ])
-            .then(() => {
+            .then((input) => {
                 const readMe = template(input);
 
                 fs.writeFile('test-readme.md', readMe, (err) => 
