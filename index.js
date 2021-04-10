@@ -44,11 +44,11 @@ inquirer
                 {
                     type: 'input',
                     message: 'Describe this application.',
-                    name: 'descriptn',
+                    name: 'description',
                 },
                 {
                     type: 'input',
-                    message: 'List what required installations are needd for this application.',
+                    message: 'List what required installations are needed for this application.',
                     name: 'installation',
                 },
                 {
@@ -63,13 +63,13 @@ inquirer
                 },
                 {
                     type: 'input',
-                    message: 'List any credits for thi sapplication.',
+                    message: 'List any credits for this application.',
                     name: 'credits',
                 },
                 {
                     type: 'input',
                     message: 'List your GitHub.',
-                    name: 'github'
+                    name: 'github',
                 },
                 {
                     type: 'input',
