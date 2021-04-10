@@ -83,3 +83,10 @@ inquirer
                     name: 'email',
                 },
             ])
+            .then(() => {
+                const readMe = template;
+
+                fs.writeFile('test-readme.md', readMe, (err) => 
+                err ? console.log(err) : console.log("Your Read-Me has been created.")
+                );
+            });
