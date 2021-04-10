@@ -1,6 +1,11 @@
+
+//node modules -- if you don't have this, it WONT WORK!
+
 const inquirer = require('inquirer');
 const fs = require('fs');
 
+
+//this is the template formatting I wrote out for the readme
 const template = (input) =>
 
 `# ${input.title}
@@ -37,9 +42,10 @@ ${input.credits}
 -Email : ${input.email}
 `;
 
+//This is the string that prompts you to answer questions
 inquirer
     .prompt([
-                {
+                {   //These correspond with the template selectors!
                     type: 'input',
                     message: 'Name this project title.',
                     name: 'title',
@@ -88,6 +94,7 @@ inquirer
             .then((input) => {
                 const readMe = template(input);
 
+                //this writes the readme
                 fs.writeFile('test-readme.md', readMe, (err) => 
                 err ? console.log(err) : console.log("Your Read-Me has been created.")
                 );
