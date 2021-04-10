@@ -1,4 +1,5 @@
-const inquirer = require('inquirer')
+const inquirer = require('inquirer');
+const fs = require('fs');
 
 const template = `# ${title}
 
@@ -32,7 +33,7 @@ ${credits}
 -GitHub : ${github}
 -LinkedIn : ${linkedin}
 -Email : ${email}
-`
+`;
 
 inquirer
     .prompt([
@@ -81,5 +82,4 @@ inquirer
                     message: 'List your email.',
                     name: 'email',
                 },
-            ]
-        )
+            ])
