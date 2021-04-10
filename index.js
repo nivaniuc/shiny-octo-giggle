@@ -1,9 +1,11 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-const template = `# ${title}
+const template = (input)
 
-${description}
+`# ${input.title}
+
+${input.description}
 
 ## TABLE OF CONTENTS ##
 
@@ -18,21 +20,21 @@ ${description}
 > [Contact] (#CONTACTS)
 
 #INSTALLATION
-${installation}
+${input.installation}
 
 #USAGE
-${usage}
+${input.usage}
 
 #LICENSE
-${license}
+${input.license}
 
 #CREDITS
-${credits}
+${input.credits}
 
 #CONTACTS
--GitHub : ${github}
--LinkedIn : ${linkedin}
--Email : ${email}
+-GitHub : ${input.github}
+-LinkedIn : ${input.linkedin}
+-Email : ${input.email}
 `;
 
 inquirer
@@ -84,7 +86,7 @@ inquirer
                 },
             ])
             .then(() => {
-                const readMe = template;
+                const readMe = template(input);
 
                 fs.writeFile('test-readme.md', readMe, (err) => 
                 err ? console.log(err) : console.log("Your Read-Me has been created.")
