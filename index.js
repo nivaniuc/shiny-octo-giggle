@@ -33,3 +33,13 @@ ${credits}
 -LinkedIn : ${linkedin}
 -Email : ${email}
 `
+
+inquirer
+    .prompt([
+                {
+                    type: 'input',
+                    message: 'Name this project title.',
+                    name: 'title',
+                },
+            ]
+        )
